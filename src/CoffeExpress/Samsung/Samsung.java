@@ -1,15 +1,20 @@
-package CoffeeExpress.Siemens;
-
-import CoffeeExpress.Express;
+package CoffeExpress.Samsung;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 
-import javax.swing.*;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
 
-public abstract class Siemens implements Express {
+import CoffeeExpress.Express;
+
+public abstract class Samsung implements Express {
 
 	public boolean operationStatus = false;
 	protected int cup = 1;
@@ -32,7 +37,7 @@ public abstract class Siemens implements Express {
 	public void turnOff() {
 		operationStatus = false;
 		cup = 0;
-		textArea.append("See you soon :)" + "\n");
+		textArea.append("SAMSUNG wishes good day" + "\n");
 	}
 
 	@Override
@@ -56,8 +61,8 @@ public abstract class Siemens implements Express {
 					// Kasowanie starego tekstu
 					textArea.setText("");
 					// Dodawanie nowego tekstu
-					textArea.append("Cup: " + cup + "%" + " | Battery: " + battery + "%" + " | Water reservoir: "
-							+ waterReservoir + " ml" + " | Coffee reservoir: " + coffeeReservoir + " gr" + "\n");
+					textArea.append("Coffe: " + cup + "%" + " | Power: " + battery + "%" + " | Water: " + waterReservoir
+							+ " ml" + " | Coffee: " + coffeeReservoir + " gr" + "\n");
 					cup++;
 					waterReservoir--;
 
@@ -77,27 +82,27 @@ public abstract class Siemens implements Express {
 				}
 				if (cup > 100) {
 
-					textArea.append("READY! Enjoy your coffee :)" + "\n");
-					textArea.append("Press 'Make Coffee' to make another coffee" + "\n");
+					textArea.append("You can take coffee:)" + "\n");
+					textArea.append("Press 'Make Coffee' to make another one" + "\n");
 					textArea.append("Press 'Turn Off' to disable express" + "\n");
 					cup = 0;
 				}
 				if (battery == 0) {
 
-					textArea.append("BATTERY LOW" + "\n");
+					textArea.append("POWER LOW" + "\n");
 					textArea.append("Press 'Charge Battery'" + "\n");
 				}
 
 				if (waterReservoir == 0) {
 
-					textArea.append("Water Reservoir is EMPTY" + "\n");
+					textArea.append("There is NO WATER" + "\n");
 					textArea.append("Press 'Refill Water'" + "\n");
 
 				}
 
 				if (coffeeReservoir == 0) {
 
-					textArea.append("Coffee Reservoir is EMPTY" + "\n");
+					textArea.append("There is NO COFFEE" + "\n");
 					textArea.append("Press 'Refill Coffee'" + "\n");
 				}
 
@@ -134,7 +139,7 @@ public abstract class Siemens implements Express {
 		JButton refillWaterButton = new JButton("Refill Water"); //
 		JButton refillCoffeeButton = new JButton("Refill Coffee"); //
 		JButton finishButton = new JButton("Finish Program"); //
-		JButton startButton = new JButton("Start Siemens"); //
+		JButton start1Button = new JButton("Start Samsung"); //
 
 		// Create the frame
 		frame = new JFrame("Coffee Express");
@@ -192,7 +197,7 @@ public abstract class Siemens implements Express {
 			}
 		});
 
-		startButton.addActionListener(new ActionListener() {
+		start1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
 				// Create and add the remaining buttons
@@ -204,7 +209,7 @@ public abstract class Siemens implements Express {
 				panel.add(finishButton);
 
 				// Remove the "Start" button
-				panel.remove(startButton);
+				panel.remove(start1Button);
 
 				// Refresh the panel
 				panel.revalidate();
@@ -212,7 +217,7 @@ public abstract class Siemens implements Express {
 			}
 		});
 
-		panel.add(startButton);
+		panel.add(start1Button); // zmiana dodałem "start"
 
 		// Add the text area to the panel
 

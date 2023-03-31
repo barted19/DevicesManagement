@@ -1,12 +1,13 @@
-package CoffeeExpress.Siemens;
+package CoffeExpress.Samsung;
 
 import java.awt.event.ActionEvent;
 
-public class EXPsiemens123 extends Siemens {
+public class EXPsamsung123 extends Samsung{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-
+		
+		
 	}
 
 	@Override

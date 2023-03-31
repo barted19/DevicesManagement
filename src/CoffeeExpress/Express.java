@@ -19,4 +19,6 @@ public interface Express {
 	void createGUI();
 
 	void actionPerformed(ActionEvent e);
+	
+	void closeGUI();
 }
