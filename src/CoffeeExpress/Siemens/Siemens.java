@@ -53,9 +53,9 @@ public abstract class Siemens implements Express {
 				int batteryCycle = 0;
 				int coffeeCycle = 0;
 				while (operationStatus && battery > 0 && cup <= 100 && waterReservoir > 0 && coffeeReservoir > 0) {
-					// Kasowanie starego tekstu
+					// deleting old TEXT
 					textArea.setText("");
-					// Dodawanie nowego tekstu
+					// adding new TEXT
 					textArea.append("Cup: " + cup + "%" + " | Battery: " + battery + "%" + " | Water reservoir: "
 							+ waterReservoir + " ml" + " | Coffee reservoir: " + coffeeReservoir + " gr" + "\n");
 					cup++;

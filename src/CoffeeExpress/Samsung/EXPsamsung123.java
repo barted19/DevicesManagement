@@ -1,4 +1,4 @@
-package CoffeExpress.Samsung;
+package CoffeeExpress.Samsung;
 
 import java.awt.event.ActionEvent;
 

@@ -1,4 +1,4 @@
-package CoffeExpress.Samsung;
+package CoffeeExpress.Samsung;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -58,9 +58,9 @@ public abstract class Samsung implements Express {
 				int batteryCycle = 0;
 				int coffeeCycle = 0;
 				while (operationStatus && battery > 0 && cup <= 100 && waterReservoir > 0 && coffeeReservoir > 0) {
-					// Kasowanie starego tekstu
+					// deleting old TEXT
 					textArea.setText("");
-					// Dodawanie nowego tekstu
+					// adding new TEXT
 					textArea.append("Coffe: " + cup + "%" + " | Power: " + battery + "%" + " | Water: " + waterReservoir
 							+ " ml" + " | Coffee: " + coffeeReservoir + " gr" + "\n");
 					cup++;
@@ -144,6 +144,7 @@ public abstract class Samsung implements Express {
 		// Create the frame
 		frame = new JFrame("Coffee Express");
 		
+		//Closing the window
 		frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		frame.addWindowListener(new WindowAdapter() {
 		    @Override
@@ -156,6 +157,7 @@ public abstract class Samsung implements Express {
 		});
 		frame.setSize(500, 500);
 		textArea.setEditable(false);
+		
 		// Create the panel
 		panel = new JPanel();
 
@@ -196,7 +198,7 @@ public abstract class Samsung implements Express {
 		        frame.dispose();
 			}
 		});
-
+		
 		start1Button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -216,7 +218,7 @@ public abstract class Samsung implements Express {
 				panel.repaint();
 			}
 		});
-
+		
 		panel.add(start1Button); // zmiana dodałem "start"
 
 		// Add the text area to the panel
